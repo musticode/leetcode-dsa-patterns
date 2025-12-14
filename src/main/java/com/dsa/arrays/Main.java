@@ -1,4 +1,4 @@
-package com.dsa;
+package com.dsa.arrays;
 
 import java.util.Arrays;
 
@@ -26,7 +26,6 @@ public class Main {
     }
 
     public static int findFinalValue(int[] nums, int original) {
-
         Arrays.sort(nums);
 
         for(int i = 0; i < nums.length; i++){
