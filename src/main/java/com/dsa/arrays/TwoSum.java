@@ -33,20 +33,35 @@ public class TwoSum {
 
         System.out.println("----------------");
         int arr5 [] = new int[] {-1,-2,-3,-4,-5};
-        int target5 = 0;
+        int target5 = -8;
         int result5 [] = twoSum3(arr5, target5);
         System.out.println(result5[0] + " " + result5[1]);
+
+        System.out.println("----------------");
+        int arr6 [] = new int[] {3,2,95,4,-3};
+        int target6 = 92;
+        int result6 [] = twoSum3(arr6, target6);
+        System.out.println(result6[0] + " " + result6[1]);
+
+        System.out.println((-3) + (-5));
+
+        System.out.println((95) + (-3));
     }
 
 
     public static int [] twoSum3(int [] nums, int target){
         int firstIndex = 0;
         int secondIndex = 0;
-        int tempToSearch = 0;
+        int tempToSearch = Integer.MIN_VALUE;
         boolean finished = false;
         for (int i = 0; i < nums.length && !finished; i++){
-            if (nums[i] <= target){
-                tempToSearch = target - nums[i]; //  9- 2 = 7
+//            System.out.println("nums[i] : " + nums[i]);
+//            System.out.println("target : " + target);
+
+            if (nums[i] < 0) {
+//                System.out.println("negative");
+//                System.out.println("positive");
+                tempToSearch = (target) - (nums[i]); //  9- 2 = 7
                 firstIndex = i;
 
                 for (int j = i + 1; j < nums.length; j++){
@@ -54,6 +69,20 @@ public class TwoSum {
                         secondIndex = j;
                         finished = true;
                         break;
+                    }
+                }
+            }else{
+                if ((nums[i]) <= (target)){
+//                    System.out.println("positive");
+                    tempToSearch = (target) - (nums[i]); //  9- 2 = 7
+                    firstIndex = i;
+
+                    for (int j = i + 1; j < nums.length; j++){
+                        if (nums[j] == tempToSearch){
+                            secondIndex = j;
+                            finished = true;
+                            break;
+                        }
                     }
                 }
             }
