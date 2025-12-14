@@ -40,14 +40,39 @@ public class TwoSum {
         System.out.println("----------------");
         int arr6 [] = new int[] {3,2,95,4,-3};
         int target6 = 92;
-        int result6 [] = twoSum3(arr6, target6);
+        int result6 [] = twoSum4(arr6, target6);
         System.out.println(result6[0] + " " + result6[1]);
 
-        System.out.println((-3) + (-5));
-
-        System.out.println((95) + (-3));
     }
 
+    public static int [] twoSum4(int [] nums, int target){
+
+
+        // formula
+        // num1 + num2 = target
+        // target - num1 = num2
+        // target - num2 = num1
+        // 1 + 3 = target 4
+        // 92 - 3 => 3 , 3
+        //
+        //
+
+
+        int [] result = new int[2];
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++){
+            int diff = target - nums[i];
+            if (map.containsKey(diff)){
+                int index = map.get(diff);
+                result[0] = index;
+                result[1] = i;
+                break;
+            }else{
+                map.put(nums[i],i );
+            }
+        }
+        return result;
+    }
 
     public static int [] twoSum3(int [] nums, int target){
         int firstIndex = 0;
