@@ -17,9 +17,9 @@ public class LawFeeDistributionSystem {
     public static void main(String[] args) {
         // Input Data
         Map<String, BigDecimal> fees = new LinkedHashMap<>();
-        fees.put("YO", new BigDecimal("178324.14"));
+        fees.put("YO", new BigDecimal("178644.78"));
         fees.put("FI", new BigDecimal("272705.17"));
-        fees.put("AEO", new BigDecimal("249622.04"));
+        fees.put("ANE", new BigDecimal("249622.04"));
         fees.put("IYS", new BigDecimal("427095.94"));
         fees.put("EED", new BigDecimal("0.0"));
 
